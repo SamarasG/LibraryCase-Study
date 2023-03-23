@@ -1,4 +1,3 @@
-
 public class Bookcopy implements Borrowable {
 
 	private int id;
@@ -10,18 +9,18 @@ public class Bookcopy implements Borrowable {
 	}
 
 	public void borrowItem() {
-		setAvailable(false);
+		available=false;
 	}
 
 	public void returnItem() {
-		setAvailable(true);
+		available = true;
 	}
 
+	// getters
 	public int getId(int id) {
 		return this.id;
 	}
 
-	@Override
 	public boolean isAvailable() {
 		return false;
 	}
