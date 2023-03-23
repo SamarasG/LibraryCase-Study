@@ -9,7 +9,11 @@ public class Bookcopy implements Borrowable {
 	}
 
 	public void borrowItem() {
-		available=false;
+		if (Bookcopy().available = true) {
+			available = false;
+		} else {
+			System.out.println(toString() + "this bookcopy is not available to borrow");
+		}
 	}
 
 	public void returnItem() {
@@ -25,7 +29,9 @@ public class Bookcopy implements Borrowable {
 		return false;
 	}
 
-	public void setAvailable(boolean available) {
-		this.available = available;
+	@Override
+	public String toString() {
+		return "Bookcopy [id=" + id + ", available=" + available + "]";
 	}
+	//
 }
