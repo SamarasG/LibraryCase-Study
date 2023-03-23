@@ -1,11 +1,12 @@
 
-public class Bookcopy extends Book implements Borrowable {
+public class Bookcopy implements Borrowable {
 
 	private int id;
 	private boolean available;
 
-	public Bookcopy(int id, String title, String author) {
-		super(id, title, author);
+	public Bookcopy(int id) {
+		this.id = id;
+		available = true;
 	}
 
 	public void borrowItem() {
