@@ -1,3 +1,5 @@
+package LibraryCaseStudy;
+
 
 public class Book extends Title {
 
@@ -17,7 +19,6 @@ public class Book extends Title {
 		this.author = author;
 	}
 
-	@Override
 	public String toString() {
 		return "Book [author=" + author + ", toString()=" + super.toString() + "]";
 	}

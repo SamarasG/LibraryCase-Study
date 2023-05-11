@@ -1,15 +1,20 @@
+package LibraryCaseStudy;
+
 public class Bookcopy implements Borrowable {
 
 	private int id;
 	private boolean available;
+	private Book book;
 
-	public Bookcopy(int id) {
+	public Bookcopy(int id, Book book) {
 		this.id = id;
 		available = true;
+		this.book = book;
+
 	}
 
 	public void borrowItem() {
-		if (Bookcopy().available = true) {
+		if (isAvailable() == true) {
 			available = false;
 		} else {
 			System.out.println(toString() + "this bookcopy is not available to borrow");
@@ -26,12 +31,23 @@ public class Bookcopy implements Borrowable {
 	}
 
 	public boolean isAvailable() {
-		return false;
+		return available;
 	}
 
 	@Override
 	public String toString() {
-		return "Bookcopy [id=" + id + ", available=" + available + "]";
+		return "Bookcopy [id=" + id + ", available=" + available + ", book=" + book + "]";
 	}
-	//
+
+	@Override
+	public int getId() {
+		// TODO Auto-generated method stub
+		return id;
+	}
+
+	public Book getBook() {
+		return book;
+	}
+	
+
 }
