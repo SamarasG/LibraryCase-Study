@@ -1,6 +1,5 @@
 package LibraryCaseStudy;
 
-
 public class Title {
 
 	private int id;
@@ -34,4 +33,3 @@ public class Title {
 	}
 
 }
-
