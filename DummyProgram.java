@@ -1,5 +1,14 @@
 package LibraryCaseStudy;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import java.util.List;
 
 public class DummyProgram {
@@ -13,6 +22,10 @@ public class DummyProgram {
 		System.out.println(m);
 		System.out.println(j);
 		System.out.println(b);
+
+		AddTitleGUI gui = new AddTitleGUI();
+		gui.setVisible(true);
+		gui.pack();
 	}
 
 }
