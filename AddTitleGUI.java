@@ -54,11 +54,11 @@ public class AddTitleGUI extends JFrame implements ActionListener {
 		// buttons container
 		contentPanel.add(buttonsPanel, BorderLayout.SOUTH);
 		buttonsPanel.add(addBookBt);
-		addBookBt.addActionListener(n -> addBookButton());//Lambda function
+		addBookBt.addActionListener(n -> addBookButton());// Lambda function
 		buttonsPanel.add(addJournalBt);
-		addJournalBt.addActionListener(n -> addJournalButton());//Lambda function
+		addJournalBt.addActionListener(n -> addJournalButton());// Lambda function
 		buttonsPanel.add(viewAllBt);
-		viewAllBt.addActionListener(n -> viewAllButton());//Lambda function
+		viewAllBt.addActionListener(n -> viewAllButton());// Lambda function
 		// fields container
 		contentPanel.add(mainPanel, BorderLayout.CENTER);
 		mainPanel.add(idLb);
@@ -71,11 +71,19 @@ public class AddTitleGUI extends JFrame implements ActionListener {
 	}
 
 	public void addBookButton() {
-		
+		int id = Integer.parseInt(IdtF.getText());
+		String title = titleTf.getText();
+		String author = authorEdTf.getText();
+		Book b = new Book(id, title, author);
+		library.addTitles(b);
 	}
 
 	public void addJournalButton() {
-
+		int id = Integer.parseInt(IdtF.getText());
+		String title = titleTf.getText();
+		String editor = authorEdTf.getText();
+		Journal j = new Journal(id, title, editor);
+		library.addTitles(j);
 	}
 
 	public void viewAllButton() {

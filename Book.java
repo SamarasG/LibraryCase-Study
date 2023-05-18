@@ -11,6 +11,8 @@ public class Book extends Title {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public String getAuthor() {
 		return author;
 	}
