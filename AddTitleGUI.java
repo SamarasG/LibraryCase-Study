@@ -54,11 +54,11 @@ public class AddTitleGUI extends JFrame implements ActionListener {
 		// buttons container
 		contentPanel.add(buttonsPanel, BorderLayout.SOUTH);
 		buttonsPanel.add(addBookBt);
-		addBookBt.addActionListener(n -> addBookButton());
+		addBookBt.addActionListener(n -> addBookButton());//Lambda function
 		buttonsPanel.add(addJournalBt);
-		addJournalBt.addActionListener(n -> addJournalButton());
+		addJournalBt.addActionListener(n -> addJournalButton());//Lambda function
 		buttonsPanel.add(viewAllBt);
-		viewAllBt.addActionListener(n -> viewAllButton());
+		viewAllBt.addActionListener(n -> viewAllButton());//Lambda function
 		// fields container
 		contentPanel.add(mainPanel, BorderLayout.CENTER);
 		mainPanel.add(idLb);
@@ -71,7 +71,7 @@ public class AddTitleGUI extends JFrame implements ActionListener {
 	}
 
 	public void addBookButton() {
-
+		
 	}
 
 	public void addJournalButton() {
