@@ -41,14 +41,21 @@ public class Member {
 	}
 
 	// METHODS TO ASSOSIATE A BOOK WITH A MEMBER
-	public void borrows(Borrowable b) throws AvailabilityException {
+	public void borrows(Borrowable b) throws AvailabilityException, LoanLimitException {
 		// make exceptions for max 6 over and item not available
+		if (onLoan.size() == MAX_ON_LOAN) {
+			throw new LoanLimitException("Member" + name + " with name" + id + "can not borrow " + b.getId()
+					+ "because they have max number of items on loan");
+		}
 		onLoan.add(b);
 		b.borrowItem();
 	}
 
 	// METHODS TO DIS-ASSOSIATE THE BOOK WITH THE MEMBER
-	public void returns(Borrowable b) throws AvailabilityException {
+	public void returns(Borrowable b) throws AvailabilityException,CannotBeReturnedByMemberException {
+		if(!onLoan.contains(b)) {
+			throw new CannotBeReturnedByMemberException("Member"+name+" with name" +id+"can not return "+b.getId()+"because they dont  have this item"+b.getId()+" on loan");
+		}
 		onLoan.remove(b);
 		b.returnItem();
 	}
