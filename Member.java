@@ -41,15 +41,16 @@ public class Member {
 	}
 
 	// METHODS TO ASSOSIATE A BOOK WITH A MEMBER
-	public void borrows(Borrowable b) {
+	public void borrows(Borrowable b) throws AvailabilityException {
 		// make exceptions for max 6 over and item not available
 		onLoan.add(b);
 		b.borrowItem();
 	}
 
 	// METHODS TO DIS-ASSOSIATE THE BOOK WITH THE MEMBER
-	public void returns(Borrowable b) {
+	public void returns(Borrowable b) throws AvailabilityException {
 		onLoan.remove(b);
+		b.returnItem();
 	}
 
 	@Override

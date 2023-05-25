@@ -5,7 +5,7 @@ public interface Borrowable {
 
 	public void borrowItem()throws AvailabilityException;
 
-	public void returnItem();
+	public void returnItem() throws AvailabilityException;
 
 	public boolean isAvailable();
 

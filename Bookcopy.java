@@ -22,7 +22,11 @@ public class Bookcopy implements Borrowable {
 
 	}
 
-	public void returnItem() {
+	public void returnItem() throws AvailabilityException {
+		if (available) {
+			throw new AvailabilityException(
+					"BookCopy with id " + id + " of Book " + book.getId() + "was allready anvailable");
+		}
 		this.available = true;
 	}
 
