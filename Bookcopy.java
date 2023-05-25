@@ -13,16 +13,17 @@ public class Bookcopy implements Borrowable {
 
 	}
 
-	public void borrowItem() {
-		if (isAvailable() == true) {
-			available = false;
-		} else {
-			System.out.println(toString() + "this bookcopy is not available to borrow");
+	public void borrowItem() throws AvailabilityException {
+		if (!available) {
+			throw new AvailabilityException("BookCopy with id " + id + " is not available of book" + book.getId());
+
 		}
+		this.available = false;
+
 	}
 
 	public void returnItem() {
-		available = true;
+		this.available = true;
 	}
 
 	// getters
@@ -48,6 +49,5 @@ public class Bookcopy implements Borrowable {
 	public Book getBook() {
 		return book;
 	}
-	
 
 }
